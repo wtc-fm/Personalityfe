@@ -40,3 +40,33 @@
 .read-the-docs {
   color: #888;
 }
+.feature-card {
+  @apply bg-white p-8 rounded-2xl shadow-md border border-gray-200
+         hover:shadow-xl hover:-translate-y-1 transition-all;
+}
+
+.card-title {
+  @apply text-xl font-bold text-gray-900 mb-3;
+}
+
+.card-text {
+  @apply text-gray-600 leading-relaxed text-sm;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 1s ease-out forwards;
+}

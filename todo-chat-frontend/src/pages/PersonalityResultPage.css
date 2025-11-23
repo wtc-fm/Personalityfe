@@ -1,0 +1,137 @@
+/* 배경 */
+.r-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #eef4ff, #f8faff);
+  padding: 60px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* 메인 카드 */
+.r-card {
+  width: 100%;
+  max-width: 720px;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 40px 36px;
+  box-shadow: 0 18px 50px rgba(32, 47, 85, 0.1);
+  text-align: center;
+}
+
+/* MBTI 타입 배지 */
+.r-type-badge {
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 900;
+  padding: 10px 26px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #3b82f6, #6366f1);
+  color: #fff;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* 메인 타이틀 */
+.r-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 24px;
+}
+
+/* 세줄요약 */
+.r-three-lines {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+}
+
+.r-three-lines li {
+  background: #f4f7ff;
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #334155;
+  font-weight: 500;
+}
+
+/* 섹션 공통 */
+.r-section {
+  background: #fafbff;
+  border: 1px solid #e5e9f4;
+  padding: 24px 20px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.r-section h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1e2a45;
+}
+
+.r-section ul {
+  padding-left: 0;
+  list-style: none;
+  line-height: 1.7;
+}
+
+.r-section li {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 6px;
+}
+
+/* 매칭 텍스트 */
+.r-match-text {
+  font-size: 15px;
+  font-weight: 500;
+  color: #374151;
+  margin-top: 4px;
+}
+
+/* 조언 박스 강조 */
+.advice-box {
+  background: linear-gradient(180deg, #ffffff, #f2f6ff);
+  border-left: 4px solid #60a5fa;
+}
+
+/* 다시 테스트 버튼 */
+.r-btn {
+  margin-top: 28px;
+  padding: 14px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.r-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* 모바일 */
+@media (max-width: 600px) {
+  .r-card {
+    padding: 28px 20px;
+    border-radius: 18px;
+  }
+
+  .r-title {
+    font-size: 18px;
+  }
+
+  .r-type-badge {
+    font-size: 24px;
+    padding: 8px 22px;
+  }
+}
