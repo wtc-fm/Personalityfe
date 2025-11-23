@@ -1,4 +1,6 @@
 import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { saveMyMbti } from "../api/user";   // 🔥 추가됨
 import { mbtiDescriptions } from "../data/mbtiDescriptions";
 import "./PersonalityResultPage.css";
 
@@ -8,6 +10,13 @@ export default function PersonalityResultPage() {
   const { state } = useLocation();
   const mbti = (state as { mbti?: MBTIKey } | undefined)?.mbti;
 
+  // 🔥 MBTI 자동 저장 useEffect 추가
+  useEffect(() => {
+    if (mbti) {
+      saveMyMbti(mbti).catch(() => {}); // 실패해도 페이지는 정상 작동
+    }
+  }, [mbti]);
+
   if (!mbti) return <div>결과 없음</div>;
 
   const info = mbtiDescriptions[mbti];
@@ -16,20 +25,16 @@ export default function PersonalityResultPage() {
     <div className="r-wrapper">
       <div className="r-card">
 
-        {/* MBTI 타입 */}
         <div className="r-type-badge">{mbti}</div>
 
-        {/* 요약 */}
         <h1 className="r-title">{info.summary}</h1>
 
-        {/* 세 줄 요약 */}
         <ul className="r-three-lines">
           {info.threeLines.map((t, i) => (
             <li key={i}>{t}</li>
           ))}
         </ul>
 
-        {/* 강점 */}
         <div className="r-section">
           <h2>✨ 강점</h2>
           <ul>
@@ -39,7 +44,6 @@ export default function PersonalityResultPage() {
           </ul>
         </div>
 
-        {/* 약점 */}
         <div className="r-section">
           <h2>⚠️ 약점</h2>
           <ul>
@@ -49,7 +53,6 @@ export default function PersonalityResultPage() {
           </ul>
         </div>
 
-        {/* 궁합 */}
         <div className="r-section">
           <h2>💙 잘 맞는 유형</h2>
           <p className="r-match-text">{info.bestMatch.join(", ")}</p>
@@ -60,13 +63,11 @@ export default function PersonalityResultPage() {
           <p className="r-match-text">{info.worstMatch.join(", ")}</p>
         </div>
 
-        {/* 조언 */}
         <div className="r-section advice-box">
           <h2>🌟 한 줄 조언</h2>
-          <p>{info.advice}</p>
+          <p style={{ color: "black" }}>{info.advice}</p>
         </div>
 
-        {/* 다시하기 버튼 */}
         <button
           className="r-btn"
           onClick={() => (window.location.href = "/personality")}
