@@ -15,7 +15,7 @@ export default function LoginPage() {
       localStorage.setItem("token", res.token);
 
       alert("로그인 성공!");
-      navigate("/personality");
+      navigate("/mypersonality"); 
 
     } catch (e: any) {
       alert("로그인 실패: " + (e.response?.data?.message || "알 수 없는 오류"));

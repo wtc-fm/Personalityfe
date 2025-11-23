@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
+import MyPersonality from "./pages/MyPersonality";
 import HomePage from "./pages/HomePage";
 import PersonalityPage from "./pages/PersonalityPage";
 import PersonalityResultPage from "./pages/PersonalityResultPage";
@@ -18,6 +19,7 @@ export default function App() {
 
                 {/* 로그인 */}
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/mypersonality" element={<MyPersonality />} />
         <Route path="/personality" element={<PersonalityPage />} />
         <Route path="/result" element={<PersonalityResultPage />} />
       </Routes>

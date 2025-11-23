@@ -82,3 +82,11 @@
 .signup-link:hover {
   text-decoration: underline;
 }
+.login-input {
+  color: #111;            
+  background: #ffffff;   
+}
+
+.login-input::placeholder {
+  color: #9ca3af;       
+}
