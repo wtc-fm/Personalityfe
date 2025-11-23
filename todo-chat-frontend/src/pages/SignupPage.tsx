@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { signup } from "../api/auth";   // ⭐ API 함수 불러오기
+import { signup } from "../api/auth"; 
 import "./Signup.css";
 
 export default function SignupPage() {
@@ -10,6 +10,7 @@ export default function SignupPage() {
     try {
       await signup(email, pw);
       alert("회원가입 성공!");
+      window.location.href = "/login";  // ⭐ 성공 시 로그인 페이지로 이동
     } catch (err: any) {
       console.error(err);
       alert("회원가입 실패: " + (err.response?.data?.message || "알 수 없는 오류"));

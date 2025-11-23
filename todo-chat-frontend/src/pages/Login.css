@@ -1,0 +1,84 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 16px;
+  background: #f5f6ff; /* 아주 연한 보라톤 배경 */
+}
+
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  background: white;
+  padding: 40px 32px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.login-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.login-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+  margin: 8px 0 6px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  margin-bottom: 14px;
+  transition: 0.2s;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #4F46E5;
+  box-shadow: 0 0 0 3px rgba(79,70,229,0.15);
+}
+
+.login-btn {
+  margin-top: 10px;
+  background: #4F46E5;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.login-btn:hover {
+  background: #4338CA;
+}
+
+.signup-text {
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+  color: #555;
+}
+
+.signup-link {
+  color: #4F46E5;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
