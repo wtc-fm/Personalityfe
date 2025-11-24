@@ -11,14 +11,17 @@ export default function PersonalityResultPage() {
   const mbti = (state as { mbti?: MBTIKey } | undefined)?.mbti;
 
   
+
   const rawToken = localStorage.getItem("token");
-  const isLoggedIn = rawToken && rawToken !== "undefined" && rawToken !== "null";
+  const isLoggedIn = Boolean(
+    rawToken && rawToken !== "undefined" && rawToken !== "null"
+  );
 
   useEffect(() => {
     if (mbti && isLoggedIn) {
       saveMyMbti(mbti).catch(() => {});
     }
-  }, [mbti, isLoggedIn]);
+  }, []); 
 
 
 
