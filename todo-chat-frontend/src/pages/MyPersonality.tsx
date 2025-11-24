@@ -22,9 +22,6 @@ export default function MyPersonality() {
       .catch(() => setMbti(null));
   }, []);
 
-  // -----------------------------
-  // MBTI가 없는 경우 (처음 로그인)
-  // -----------------------------
   if (!mbti) {
     return (
       <div className="my-wrapper">
@@ -42,9 +39,6 @@ export default function MyPersonality() {
     );
   }
 
-  // -----------------------------
-  // MBTI가 있는 경우 (로그인 → 바로 내 성향 노출)
-  // -----------------------------
   const info = mbtiDescriptions[mbti];
 
   return (
@@ -64,7 +58,6 @@ export default function MyPersonality() {
           ))}
         </ul>
 
-        {/* 상세 보기 버튼 → 기존 Result 페이지 동일하게 사용 */}
         <button
           className="my-btn"
           onClick={() => navigate("/result", { state: { mbti } })}
@@ -72,7 +65,6 @@ export default function MyPersonality() {
           결과 자세히 보기
         </button>
 
-        {/* 테스트 다시하기 */}
         <button
           className="my-btn-outline"
           onClick={() => navigate("/personality")}

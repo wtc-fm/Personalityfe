@@ -11,7 +11,7 @@ export default function PersonalityPage() {
   const navigate = useNavigate();
 
   const handleChoice = (choice: "A" | "B") => {
-    setSelected(choice); // ⭐ 클릭 버튼 강조
+    setSelected(choice); 
 
     setTimeout(() => {
       const q = questions[index];
@@ -23,7 +23,7 @@ export default function PersonalityPage() {
 
       if (index < questions.length - 1) {
         setIndex((prev) => prev + 1);
-        setSelected(null); // 다음 질문 진입 시 강조 제거
+        setSelected(null); 
       } else {
         const result = calcMbti({
           ...answers,
@@ -31,7 +31,7 @@ export default function PersonalityPage() {
         });
         navigate("/result", { state: { mbti: result } });
       }
-    }, 250); // ⭐ 클릭 애니메이션 시간
+    }, 250); 
   };
 
   const q = questions[index];

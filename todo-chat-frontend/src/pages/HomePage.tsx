@@ -3,7 +3,6 @@ export default function HomePage() {
   return (
     <div className="home-container">
 
-      {/* Hero Section */}
       <div className="hero-section">
 
         <h1 className="hero-title">
@@ -23,7 +22,7 @@ export default function HomePage() {
           테스트 시작하기
         </button>
 
-        {/* ⭐ 로그인 / 회원가입 추가 */}
+
         <div className="auth-buttons">
           <button
             className="auth-btn login-btn"
@@ -41,7 +40,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Features Section */}
       <div className="features">
         <div className="feature-card">
           <h3>간단한 테스트</h3>
