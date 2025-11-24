@@ -135,3 +135,12 @@
     padding: 8px 22px;
   }
 }
+.r-login-save-btn {
+  margin-top: 14px;
+  background: linear-gradient(90deg, #6366f1, #3b82f6);
+}
+
+.r-login-save-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+}

@@ -10,12 +10,15 @@ export default function PersonalityResultPage() {
   const { state } = useLocation();
   const mbti = (state as { mbti?: MBTIKey } | undefined)?.mbti;
 
-  // 🔥 MBTI 자동 저장 useEffect 추가
+  
+  const isLoggedIn = Boolean(localStorage.getItem("accessToken"));
   useEffect(() => {
-    if (mbti) {
-      saveMyMbti(mbti).catch(() => {}); // 실패해도 페이지는 정상 작동
+    if (mbti && isLoggedIn) {
+      saveMyMbti(mbti).catch(() => {});
     }
-  }, [mbti]);
+  }, [mbti, isLoggedIn]);
+
+
 
   if (!mbti) return <div>결과 없음</div>;
 
@@ -74,6 +77,16 @@ export default function PersonalityResultPage() {
         >
           다시 테스트하기
         </button>
+        
+        {!isLoggedIn && (
+          <button
+            className="r-btn r-login-save-btn"
+            onClick={() => (window.location.href = "/login")}
+          >
+            로그인하고 성향 저장하기
+          </button>
+        )}
+
       </div>
     </div>
   );
