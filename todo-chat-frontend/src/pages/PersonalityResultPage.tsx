@@ -11,7 +11,9 @@ export default function PersonalityResultPage() {
   const mbti = (state as { mbti?: MBTIKey } | undefined)?.mbti;
 
   
-  const isLoggedIn = Boolean(localStorage.getItem("accessToken"));
+  const rawToken = localStorage.getItem("token");
+  const isLoggedIn = rawToken && rawToken !== "undefined" && rawToken !== "null";
+
   useEffect(() => {
     if (mbti && isLoggedIn) {
       saveMyMbti(mbti).catch(() => {});
@@ -77,15 +79,15 @@ export default function PersonalityResultPage() {
         >
           다시 테스트하기
         </button>
-        
         {!isLoggedIn && (
           <button
             className="r-btn r-login-save-btn"
-            onClick={() => (window.location.href = "/login")}
+            onClick={() => (window.location.href = `/login?mbti=${mbti}`)}
           >
             로그인하고 성향 저장하기
           </button>
         )}
+
 
       </div>
     </div>
