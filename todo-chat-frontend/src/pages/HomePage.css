@@ -8,7 +8,58 @@ html, body {
   padding: 0;
   overflow-x: hidden;
   font-family: "Pretendard", sans-serif;
+  background: #ffffff !important;
+  color-scheme: light !important;
 }
+
+.home-container {
+  background: #ffffff !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html, body, .home-container {
+    background: #ffffff !important;
+    color: #222 !important;
+  }
+}
+/* 공통 스타일 */
+.auth-btn {
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  padding: 14px 26px; /* 기본 패딩 */
+}
+
+/* 로그인 버튼 */
+.login-btn {
+  background: #4F46E5;
+  color: #ffffff;
+  border: none; 
+}
+
+/* 회원가입 버튼 */
+.signup-btn {
+  background: #ffffff;
+  color: #4F46E5;
+  border: 2px solid #4F46E5;
+
+  padding: 12px 24px;
+}
+
+.auth-btn:hover {
+  transform: translateY(-3px);
+}
+
+.login-btn:hover {
+  background: #4338CA;
+}
+
+.signup-btn:hover {
+  background: #f4f3ff;
+}
+
 
 /* --- 전체 레이아웃 --- */
 .home-container {
@@ -63,17 +114,16 @@ html, body {
   transform: translateY(-4px);
 }
 
-/* --- Features Section (데스크톱 중앙 정렬 완성본) --- */
 .features {
   display: flex;
-  justify-content: center;   /* 🔥 정확한 중앙 정렬 핵심 */
+  justify-content: center;  
   align-items: flex-start;
   gap: 28px;
-  flex-wrap: nowrap;          /* 🔥 데스크톱은 3개 고정 */
+  flex-wrap: nowrap;        
 }
 
 .feature-card {
-  flex: 0 0 300px;           /* 🔥 width보다 flex-basis가 정확함 */
+  flex: 0 0 300px;          
   max-width: 300px;
   background: #ffffff;
   padding: 28px;
